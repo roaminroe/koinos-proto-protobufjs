@@ -1,0 +1,21 @@
+{
+  "name": "@roaminroe/koinos-proto-protobufjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/roaminroe/koinos-proto-protobufjs.git",
+  "author": "roaminroe <roamin@tuta.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "protobufjs": "^6.11.2"
+  },
+  "scripts": {
+    "static": "pbjs --keep-case --target static-module -o index.js `find ./google -name '*.proto'` `find ./koinos -name '*.proto'` && pbts -o index.d.ts index.js",
+    "json": "pbjs --keep-case --target json -o index.json `find ./google -name '*.proto'` `find ./koinos -name '*.proto'`",
+    "pbjs": "yarn static && yarn json"
+  },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "index.json"
+  ]
+}
